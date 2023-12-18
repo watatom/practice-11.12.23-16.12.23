@@ -88,7 +88,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Apartaments](
-	[ID] [smallint] NOT NULL,
+	[ID] [smallint] IDENTITY(1,1) NOT NULL,
 	[HouseID] [tinyint] NOT NULL,
 	[Number] [smallint] NOT NULL,
 	[Area] [decimal](18, 10) NOT NULL,
@@ -111,7 +111,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[House](
-	[ID] [tinyint] NOT NULL,
+	[ID] [tinyint] IDENTITY(1,1) NOT NULL,
 	[ResidentialComplexID] [tinyint] NOT NULL,
 	[Street] [nvarchar](50) NOT NULL,
 	[Number] [nvarchar](50) NOT NULL,
@@ -130,7 +130,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[ResidentialComplex](
-	[ID] [tinyint] NOT NULL,
+	[ID] [tinyint] IDENTITY(1,1) NOT NULL,
 	[Name] [nvarchar](50) NOT NULL,
 	[City] [nvarchar](50) NOT NULL,
 	[Status] [nvarchar](50) NOT NULL,
