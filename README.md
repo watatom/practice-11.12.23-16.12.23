@@ -11,34 +11,7 @@ let's start ▶️ </h1>
 
 Этот продукт создан для компаний, желающих автоматизировать свои бизнес-процессы, и освободить время на масштабирование бизнеса.
 
-## Почему мы создали данный репозиторий?
-
-+ ....
-+ ....
-+ так надо :D
-
-## Можешь ли ты понять наш код?
-
-```
-var logicUnderstood = user.InOurTeam() ? true : false;
-Console.WriteLine($'Your result is {logicUnderstood}');
-```
-
 ## Что мы использовали?
-
-<!--<table>
-  <tr>
-    <td>
-        <img src="vs.jpg" alt="Visual Studio" />
-    </td>
-    <td>
-        <img src="c#.jpg" alt="C#" />
-    </td>
-    <td>
-        <img src="microsoftsqlserver" alt="SQLServer" />
-    </td>
-  </tr>
-</table>-->
 
 ### IDE 
 
