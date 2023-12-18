@@ -1,0 +1,70 @@
+﻿<Page x:Class="ZHK.Forms.statistics"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ZHK.Forms"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800" d:Background="SlateGray"
+      Title="statistics">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label Style="{StaticResource PageTitle}">
+            Статистика
+        </Label>
+        <UniformGrid Style="{StaticResource Filters}" Grid.Row="1">
+            <WrapPanel Style="{StaticResource FilterContainer}" HorizontalAlignment="Right" Margin="0,0,125,0">
+                <Label Style="{StaticResource FilterContainerLabel}">ЖК</Label>
+                <ComboBox Style="{StaticResource Filter}" x:Name="comboboxRC" SelectionChanged="comboboxRC_SelectionChanged"/>
+            </WrapPanel>
+            <Button Style="{StaticResource EditDataButton}" x:Name="BtnRes" Click="BtnRes_Click">Провести расчёт</Button>
+        </UniformGrid>
+        <UniformGrid Style="{StaticResource Filters}" Grid.Row="2">
+                <WrapPanel Style="{StaticResource FilterContainer}">
+                <Label Style="{StaticResource FilterContainerLabel}">Стоимость площади</Label>
+                <TextBox Style="{StaticResource Input}"  x:Name="textboxStP"/>
+            </WrapPanel>
+            <WrapPanel Style="{StaticResource FilterContainer}">
+                <Label Style="{StaticResource FilterContainerLabel}">Стоимость комнаты</Label>
+                <TextBox Style="{StaticResource Input}"  x:Name="TextBoxStCom"/>
+            </WrapPanel>
+        </UniformGrid>
+        <StackPanel Grid.Row="3" HorizontalAlignment="Left">
+            <Label Style="{StaticResource FilterContainerLabel}" HorizontalAlignment="Center">Стотиость квартир</Label>
+            <DataGrid  x:Name="DGrid1" HorizontalAlignment="Center" Height="231">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding adr}" Header="Адрес"></DataGridTextColumn>
+                    <DataGridTextColumn Binding="{Binding Zena}" Header="Цена"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+        <StackPanel Grid.Row="3" HorizontalAlignment="Right">
+            <Label Style="{StaticResource FilterContainerLabel}" HorizontalAlignment="Center">Стоимость домов</Label>
+            <DataGrid  x:Name="DGrid2" HorizontalAlignment="Center" Height="231">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Number}" Header="Номер"></DataGridTextColumn>
+                    <DataGridTextColumn Binding="{Binding sum1}" Header="Цена"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+        <StackPanel Grid.Row="3" HorizontalAlignment="Center">
+            <Label Style="{StaticResource FilterContainerLabel}" HorizontalAlignment="Center">Стоимость ЖК</Label>
+            <DataGrid  x:Name="DGrid3" HorizontalAlignment="Center" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Name}" Header="Название"></DataGridTextColumn>
+                    <DataGridTextColumn Binding="{Binding sum2}" Header="Цена"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+
+    </Grid>
+</Page>

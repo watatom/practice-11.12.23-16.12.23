@@ -1,0 +1,69 @@
+﻿<Page x:Class="ZHK.Forms.FormApartment"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ZHK.Forms"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800" d:Background="SlateGray"
+      Title="FormApartment">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="60"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Style="{StaticResource PageTitle}">Квартира</Label>
+        <UniformGrid Style="{StaticResource ObjectInputs}" Grid.Row="1">
+            <WrapPanel Style="{StaticResource InputBox}">
+                <Label Style="{StaticResource InputBoxLabel}">ЖК</Label>
+                <ComboBox x:Name="ComboboxRC" Style="{StaticResource InputComboBox}" SelectionChanged="ComboboxRC_SelectionChanged"></ComboBox>
+            </WrapPanel>
+            <WrapPanel Style="{StaticResource InputBox}">
+                <Label Style="{StaticResource InputBoxLabel}">Дом</Label>
+                <ComboBox x:Name="ComboboxHouse" Style="{StaticResource InputComboBox}"></ComboBox>
+            </WrapPanel>
+            <WrapPanel Style="{StaticResource InputBox}">
+                <Label Style="{StaticResource InputBoxLabel}">Номер</Label>
+                <TextBox x:Name="TxtBoxNumber" Style="{StaticResource Input}"></TextBox>
+            </WrapPanel>
+            <WrapPanel Style="{StaticResource InputBox}">
+                <Label Style="{StaticResource InputBoxLabel}">Площадь</Label>
+                <TextBox x:Name="TxtBoxArea" Style="{StaticResource Input}"></TextBox>
+            </WrapPanel>
+            <WrapPanel Style="{StaticResource InputBox}">
+                <Label Style="{StaticResource InputBoxLabel}">Комнаты</Label>
+                <TextBox x:Name="TxtBoxRooms" Style="{StaticResource Input}"></TextBox>
+            </WrapPanel>
+            <WrapPanel Style="{StaticResource InputBox}">
+                <Label Style="{StaticResource InputBoxLabel}">Секция</Label>
+                <TextBox x:Name="TxtBoxSection" Style="{StaticResource Input}"></TextBox>
+            </WrapPanel>
+            <WrapPanel Style="{StaticResource InputBox}">
+                <Label Style="{StaticResource InputBoxLabel}">Этаж</Label>
+                <TextBox x:Name="TxtBoxFloor" Style="{StaticResource Input}"></TextBox>
+            </WrapPanel>
+            <WrapPanel Style="{StaticResource InputBox}">
+                <Label Style="{StaticResource InputBoxLabel}">Статус</Label>
+                <ComboBox x:Name="ComboboxStatus" Style="{StaticResource InputComboBox}"></ComboBox>
+            </WrapPanel>
+            <WrapPanel Style="{StaticResource InputBox}">
+                <Label Style="{StaticResource InputBoxLabel}">КДС</Label>
+                <TextBox x:Name="TxtBoxKDC" Style="{StaticResource Input}"></TextBox>
+            </WrapPanel>
+            <WrapPanel Style="{StaticResource InputBox}">
+                <Label Style="{StaticResource InputBoxLabel}">Затраты</Label>
+                <TextBox x:Name="TxtBoxMoney" Style="{StaticResource Input}"></TextBox>
+            </WrapPanel>
+        </UniformGrid>
+        <UniformGrid Grid.Row="2" VerticalAlignment="Bottom" Columns="3">
+            <Button x:Name="BtnAdd" Click="BtnAdd_Click" Style="{StaticResource EditObjectButton}">Добавить</Button>
+            <Button x:Name="BtnEdit" Click="BtnEdit_Click" Style="{StaticResource EditObjectButton}">Редактировать</Button>
+            <Button x:Name="BtnDelete" Click="BtnDelete_Click" Style="{StaticResource EditObjectButton}">Удалить</Button>
+        </UniformGrid>
+    </Grid>
+</Page>
